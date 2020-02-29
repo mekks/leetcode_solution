@@ -1,0 +1,32 @@
+class Solution {
+public:
+    bool validMountainArray(vector<int>& A)
+    {
+         int arr_len=A.size();
+         int i;
+         for(i=0 ;i<arr_len-1 ;i++)
+         {
+             if( A[i] >= A[i+1] )
+             {
+               break;
+             }
+         }
+        
+         if(i==0 || i == arr_len-1)
+         {
+             return false;
+         }
+          for ( ; i< arr_len-1; i++)
+          {
+        
+              if(A[i] <= A[i+1])
+              {
+                  return false;
+              }
+          }
+        
+            return i == arr_len-1;
+    
+    }
+    
+};
